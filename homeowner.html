@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PaintPath — Free AI Paint Estimate | Greenville, SC</title>
+  <title>PaintLine Pro — Free AI Paint Estimate | Greenville, SC</title>
   <meta name="description" content="See your home repainted in seconds. Upload a photo, try Sherwin-Williams colors, and book a free on-site estimate with a vetted Greenville painter." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -52,7 +52,7 @@
       <a href="#top" class="flex items-center gap-2.5">
         <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-ink text-gold-bright">✦</span>
         <div>
-          <div class="text-lg font-semibold tracking-tight leading-none">Paint<span class="text-gold">Path</span></div>
+          <div class="text-lg font-semibold tracking-tight leading-none">Paint<span class="text-gold">Line</span> Pro</div>
           <div class="text-[10px] font-medium uppercase tracking-[0.16em] text-ink/45">Greenville homeowners</div>
         </div>
       </a>
@@ -159,7 +159,7 @@
               </div>
               <div id="voice-card" class="rounded-2xl bg-ink p-4 text-paper">
                 <div class="flex items-center justify-between">
-                  <div class="text-[11px] font-semibold uppercase tracking-wider text-gold-bright"><span class="voice-wave"><span></span><span></span><span></span></span> Chloe · PaintPath voice</div>
+                  <div class="text-[11px] font-semibold uppercase tracking-wider text-gold-bright"><span class="voice-wave"><span></span><span></span><span></span></span> Chloe · PaintLine Pro voice</div>
                   <span id="voice-mode-badge" class="text-[10px] text-gold-bright">Connecting</span>
                 </div>
                 <p id="voice-status-text" class="mt-2 text-sm text-paper/80">Calling to confirm your project details…</p>
@@ -190,8 +190,8 @@
 
   <footer class="border-t border-ink/10 bg-ink py-10 text-paper/60">
     <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-      <div class="text-lg font-semibold text-paper">Paint<span class="text-gold-bright">Path</span></div>
-      <p class="text-[11px] text-paper/35">© 2026 PaintPath · Greenville homeowners · Separate from PaintLead Pro contractors</p>
+      <div class="text-lg font-semibold text-paper">Paint<span class="text-gold-bright">Line</span> Pro</div>
+      <p class="text-[11px] text-paper/35">© 2026 PaintLine Pro · Greenville homeowners · Separate from PaintLead Pro contractors</p>
     </div>
   </footer>
 
@@ -259,7 +259,7 @@
     function buildVoiceScript(name, scope, color, budget) {
       const first = (name || 'there').split(' ')[0];
       return [
-        { who: 'Chloe', text: 'Hi ' + first + ', this is Chloe with PaintPath in Greenville.' },
+        { who: 'Chloe', text: 'Hi ' + first + ', this is Chloe with PaintLine Pro in Greenville.' },
         { who: 'Chloe', text: 'I’m calling about your ' + scope + ' project' + (color && color !== 'None' ? ' in ' + color : '') + '.' },
         { who: 'You', text: 'Yes, that’s me.' },
         { who: 'Chloe', text: 'Budget around ' + budget + ' — does that still feel right?' },
@@ -329,9 +329,9 @@
       nextFunnelStep(4);
       runVoiceAgent({ leadId: String(Date.now()), phone, name, scope: scope, budget: computedPrice, color: selectedColorName });
       try {
-        const leads = JSON.parse(localStorage.getItem('paintpath_leads') || '[]');
-        leads.unshift({ id: Date.now(), name, email, phone, address, scope, budget: computedPrice, color: selectedColorName, source: 'PaintPath' });
-        localStorage.setItem('paintpath_leads', JSON.stringify(leads));
+        const leads = JSON.parse(localStorage.getItem('paintline_leads') || '[]');
+        leads.unshift({ id: Date.now(), name, email, phone, address, scope, budget: computedPrice, color: selectedColorName, source: 'PaintLine Pro' });
+        localStorage.setItem('paintline_leads', JSON.stringify(leads));
       } catch (_) {}
     }
     updateBeforeAfterSlider(52);
